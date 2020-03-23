@@ -1427,3 +1427,11 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+.social-media {
+  display: inline-block;
+  padding: 5px;
+  float: right;
+  margin-bottom: 0px; }
+  .social-media li {
+    display: inline-block; }
