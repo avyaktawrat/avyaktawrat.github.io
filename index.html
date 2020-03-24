@@ -48,7 +48,9 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style>
+	#more {display: none;}
+	</style>
 	</head>
 	<body>
 	<div id="colorlib-page">
@@ -523,7 +525,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				-->
 					<div class="row">
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<a href="work.html"><div class="project img d-flex justify-content-center align-items-center" style="background-image: url(images/img-1.jpg);">
+							<a href="#itsp"><div class="project img d-flex justify-content-center align-items-center" style="background-image: url(images/img-1.jpg);">
 								<div class="desc text-center">
 									<div class="con ">
 										<h2>Gesture Controlled Robotic Hand</h2>
@@ -534,7 +536,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							</a>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<a href="work.html"><div class="project" style="background-image: url(images/img-2.jpg);">
+							<a href="#soc"><div class="project" style="background-image: url(images/img-2.jpg);">
 								<div class="desc text-center">
 									<div class="con">
 										<h2>Galactic Collision Simulator</h2>
@@ -546,7 +548,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							</a>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<a href="work.html"><div class="project" style="background-image: url(images/img-3.jpg);">
+							<a href="#stop"><div class="project" style="background-image: url(images/img-3.jpg);">
 								<div class="desc text-center">
 									<div class="con">
 										<h2>Stopwatch</h2>
@@ -558,10 +560,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							</a>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<a href="work.html"><div class="project" style="background-image: url(images/img-4.jpg);">
+							<a href="#ml"><div class="project" style="background-image: url(images/img-4.jpg);">
 								<div class="desc text-center">
 									<div class="con">
-										<h2>3-D Reconstruction from 2-D images</h2>
+										<h2>3-D Reconstruction from 2-D x-rays</h2>
 										<span>Machine Learning</span>
 										
 									</div>
@@ -572,14 +574,41 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						
 						
 					</div>
+					
 					<div class="row">
 						<div class="col-md-12 animate-box">
-							<p><a onclick="document.getElementById('more').style.display='block'" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+							<div id = "dots"><h4> Know more about the projects here </h4></div>
+							<div id = "more">
+						<div class="container-wrap" id = "itsp">
+							<h3>Gesture Controlled Robotic Hand </h3>
+							<p class="mb-4">The summers were never a waste with an opportunity from the Technical Council to come up with your ideas and use your skills to do a tech project that can have an impact on human life.</p>
+							<div class="half">
+					              	<p><a href="https://docs.google.com/document/d/1LfHqLrpxjOy2D3RLjZdQwcAbx7rB3mFJFgVVWLWeQKE/edit" >Link to Documentation</a></p>
+				            </div>
+						</div>
+
+						<div class="container-wrap" id = "soc">
+							<h3>Galactic Collision Simulator </h3>
+							<p class="mb-4">As a part of my first year summer coding project, I simulated the solar system on Python using libraries OpenGL and pyGame.</p>
+							<div class="half">
+					              	<p><a href="https://www.wncc-iitb.org/soc_projects/07-rajdeep-yadav-galactic-collision-similator.html">More about the Project</a></p>
+				              </div>
+						</div>
+
+						<div class="container-wrap" id = "stop">
+							<h3>Stopwatch</h3>
+							<p class="mb-4">A year into the Electrical Engineering department and I got a hands-on with one of the coolest department projects.</p>
+							<div class="half">
+					              	<p><a href="https://docs.google.com/document/d/1CGajPbZU3p0gE5qD1pNSiFrHD30XZ9qVvmcNo1A1KH4/edit?usp=sharing">Link to Documentation</a></p>
+				            </div>
+						</div>
+
+						<div class="container-wrap" id = "ml">
+							<h3>3-D Reconstruction from 2-D images</h3>
+							<p class="mb-4">Many 3-D objects can have the same x-ray image, which makes the inverting difficult. About to embark on a project that uses CNN to learn from previously provided datasets of x-ray, object pairs to predict the 3-D figure of a new x-ray sample.</p>
 						</div>
 					</div>
-					<div class="row" id = "more" style="display:none">
-						<div class="container-wrap">
-							<p class="mb-4">The summers were never a waste with an opportunity from the Technical Council to come up with your ideas and use your skills to do a tech project that can have an impact on human life.</p>
+							<p><a onclick="myF()" class="btn btn-primary btn-lg btn-load-more" id = "myBtn">Load more <i class="icon-reload"></i></a></p>
 						</div>
 					</div>
 				</div>
@@ -721,6 +750,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+	<script>
+function myF() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
 
 	</body>
 </html>
